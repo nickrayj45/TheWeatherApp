@@ -1,0 +1,19 @@
+body {
+  background: #02718b;
+}
+
+.container {
+  height: 100% auto;
+}
+
+.col-md-12 {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.input-group-append {
+  width: 75%;
+}
