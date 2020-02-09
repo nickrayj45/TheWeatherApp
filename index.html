@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-
-    <title>Hello, world!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <h1>The Weather App</h1>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-              Your Weather Dashboard
-            </a>
-
-            <!-- Search Feature -->
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Search a City"
-                aria-label="Recipient's username"
-                aria-describedby="button-addon2"
-              />
-              <div class="input-group-append">
-                <button
-                  class="btn btn-outline-secondary"
-                  placeholder="Search"
-                  type="button"
-                  id="searchForCityBtn"
-                >
-                  Search
-                </button>
-              </div>
-            </div>
-          </nav>
+    <div class="row1">
+      <div class="col-md-12"></div>
+      <div class="row2">Row2</div>
+      <div class="col-md-4">
+        Menu
+        <!-- <input  /> -->
+        <!-- <button >Search</button> -->
+        <div class="input-group mb-3">
+          <input
+            id="inputField"
+            type="text"
+            class="form-control"
+            placeholder="Search a City"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary"
+              placeholder="Search"
+              type="button"
+              id="btn"
+            >
+              Search
+            </button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <div class="col-md-8">
+        Main
+        <div class="card w-75">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              With supporting text below as a natural lead-in to additional
+              content.
+            </p>
+            <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+      <div id="cityInfo">City Info</div>
+      <div class="row3">
+        Row3
+        <div class="col-md-2">1</div>
+        <div class="col-md-2">2</div>
+        <div class="col-md-2">3</div>
+        <div class="col-md-2">4</div>
+        <div class="col-md-2">5</div>
+        <div class="col-md-2">6</div>
+      </div>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -69,6 +73,11 @@
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>
