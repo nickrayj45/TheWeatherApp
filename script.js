@@ -1,21 +1,30 @@
 // Going to need the weather API Key
+var lat; var lon;
+
 var APIKey = "fea808ff5dc02267acae44912e35ab54";
 
-$("#btn").on("click", function() {
+$("#btn").on("click", function () {
   cityName = $("#inputField").val();
 
   var queryURL =
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
     cityName +
     "&appid=" +
-    APIKey;
+    APIKey + "&units=imperial";
 
   // var cityName = $("#inputField").on("click").val();
   var cityName = $.ajax({
     url: queryURL,
     method: "GET"
-  }).then(function(response) {
+  }).then(function (response) {
     console.log(response);
+    lat = response.city.coord.lat;
+    lon = response.city.coord.lon;
+    console.log("lat:", lat, "lon:", lon)
+    var queryURL2 = "http://api.openweathermap.org/data/2.5/uvi?appid=" +
+
+      APIKey + "&lat=" + lat + "&lon=" + lon;
+
     $(".card-body").text(response);
     var nameOfCity = $("<h1>").text(response.city.name);
     $(".col-md-8").append(nameOfCity);
@@ -23,6 +32,31 @@ $("#btn").on("click", function() {
     $("#currentTemp").append(currentTemp);
     var currentHumidity = $("<p>").text(response.list[0].main.humidity);
     $(".card-text").append(currentHumidity);
+
+    var iconCode = response.list[0].weather[0].icon;
+    var iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+    // console.log(iconUrl);
+
+
+    $(".icon").attr("src", iconUrl);
+    // For loop/if statement for 5 day forecast
+    for (i = 0; i < response.list.length; i++) {
+      if (response.list[i].dt_txt.includes("06:00:00")) {
+        var fiveDayTemp = response.list[i].main.temp
+        var fiveDayHumidity = response.list[i].main.humidity
+
+
+      }
+      // appending here for 5 day forecast
+    }
+
+    var uvIndex = $.ajax({
+      url: queryURL2,
+      method: "GET"
+    }).then(function (response) {
+      // console.log(response.value)
+      $("#uvIndex").text(response.value)
+    })
   });
 });
 
@@ -59,11 +93,7 @@ $("#btn").on("click", function() {
 //     var windSpeed = $("<h5>").text(response.wind.speed);
 //     $("#windspeed").append(windSpeed);
 
-//     // var iconCode = response.weather[0].icon;
-//     // var iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
-//     // console.log(iconUrl);
-
-//     // $(".icon").attr("src", iconUrl);
+//    
 //   });
 // });
 
