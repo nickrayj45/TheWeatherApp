@@ -27,10 +27,11 @@ body {
   float: left;
   width: 25%;
   height: 400px;
+  text-align: center;
 }
 
 .col-md-8 {
-  background: red;
+  background: white;
   float: right;
   width: 75%;
   height: 400px;

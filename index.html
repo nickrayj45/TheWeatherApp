@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>The Weather Dashboard</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
 </head>
@@ -32,21 +32,33 @@
       </div>
     </div>
 
-    <div class="col-md-8">
-      Your Weather Info
-      <div id="card-w-75">
-        <div class="card-body">
+    <div class="col-md-8">Your Weather Info
+      <div id="city">City</div>
+      <div id="currentTemp">Temperature</div>
+      <div id="card-text">Humidity</div>
+      <div id="uvIndex">UV Index</div>
+      <img class="icon" src="" alt="" />
+      
+      <!-- <div id="card-w-75">
+        
           <h5 class="card-title">Card title</h5>
           <p class="card-text"></p>
           <a href="#" class="btn btn-primary">Button</a>
-        </div>
-      </div>
+        
+      </div> -->
     </div>
-    <div id="cityInfo">City Info</div>
+    <div id="fiveDayInfo">5 Day Forecast
+      <div id="fiveDayTemp">
+        <p>Temperature</p>
+      </div>
+      <div id="fiveDayHumidity">
+        <p>Humidity</p>
+      </div>
 
-    <div id="currentTemp">
+      <div id="currentTemp">
 
-      <!-- <div id="windspeed">Wind Speed</div>
+
+        <!-- <div id="windspeed">Wind Speed</div>
         Row3
         <div class="row4">1</div>
         <div class="row4">2</div>
@@ -54,11 +66,12 @@
         <div class="row4">4</div>
         <div class="row4">5</div>
         <div class="row4">6</div> -->
+      </div>
     </div>
-    <div id="uvIndex"></div>
+    <script src="moments.js"></script>
   </div>
 
-  <img class="icon" src="" alt="Weather Icon" />
+
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -71,9 +84,8 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <!-- <script src="moments.js"></script> -->
+
   <script src="script.js"></script>
 </body>
 
 </html>
--->

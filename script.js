@@ -1,6 +1,9 @@
 // Going to need the weather API Key
 var lat; var lon;
 
+var FAHRENHEIT = "&#8457";
+
+
 var APIKey = "fea808ff5dc02267acae44912e35ab54";
 
 $("#btn").on("click", function () {
@@ -25,13 +28,13 @@ $("#btn").on("click", function () {
 
       APIKey + "&lat=" + lat + "&lon=" + lon;
 
-    $(".card-body").text(response);
+    $("#city").text(response);
     var nameOfCity = $("<h1>").text(response.city.name);
     $(".col-md-8").append(nameOfCity);
-    var currentTemp = $("<h2>").text(response.list[0].main.temp);
+    var currentTemp = $("<p>" + FAHRENHEIT).text(response.list[0].main.temp);
     $("#currentTemp").append(currentTemp);
     var currentHumidity = $("<p>").text(response.list[0].main.humidity);
-    $(".card-text").append(currentHumidity);
+    $("#card-text").append(currentHumidity);
 
     var iconCode = response.list[0].weather[0].icon;
     var iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
@@ -48,6 +51,10 @@ $("#btn").on("click", function () {
 
       }
       // appending here for 5 day forecast
+      $("#fiveDayTemp").text(response.list[i].main.temp);
+      var fiveDayTemp = $("<p>" + FAHRENHEIT).append(fiveDayTemp)
+      $("#fiveDayHumidity").text(response.list[i].main.humidity)
+      var fiveDayHumidity = response.list[i].main.humidity
     }
 
     var uvIndex = $.ajax({
