@@ -1,9 +1,9 @@
-// Going to need the weather API Key
+// Variables for latitude and longitude
 var lat; var lon;
 
 var FAHRENHEIT = "&#8457";
 
-
+// API Key
 var APIKey = "fea808ff5dc02267acae44912e35ab54";
 
 $("#btn").on("click", function () {
@@ -15,7 +15,7 @@ $("#btn").on("click", function () {
     "&appid=" +
     APIKey + "&units=imperial";
 
-  // var cityName = $("#inputField").on("click").val();
+  //  AJAX Call to get the weather 
   var cityName = $.ajax({
     url: queryURL,
     method: "GET"
@@ -27,12 +27,15 @@ $("#btn").on("click", function () {
     var queryURL2 = "http://api.openweathermap.org/data/2.5/uvi?appid=" +
 
       APIKey + "&lat=" + lat + "&lon=" + lon;
-
+    // Appending weather info to the page
     $("#city").text(response);
     var nameOfCity = $("<h1>").text(response.city.name);
     $(".col-md-8").append(nameOfCity);
+    localStorage.setItem(".col-md-8", nameOfCity)
     var currentTemp = $("<p>" + FAHRENHEIT).text(response.list[0].main.temp);
     $("#currentTemp").append(currentTemp);
+    var windSpeed = $("<p>").text(response.list[0].wind.speed);
+    $("#windSpeed").append(windSpeed);
     var currentHumidity = $("<p>").text(response.list[0].main.humidity);
     $("#card-text").append(currentHumidity);
 
@@ -52,11 +55,11 @@ $("#btn").on("click", function () {
       }
       // appending here for 5 day forecast
       $("#fiveDayTemp").text(response.list[i].main.temp);
-      var fiveDayTemp = $("<p>" + FAHRENHEIT).append(fiveDayTemp)
+      var fiveDayTemp = $("<p>").append(fiveDayTemp)
       $("#fiveDayHumidity").text(response.list[i].main.humidity)
-      var fiveDayHumidity = response.list[i].main.humidity
+      var fiveDayHumidity = response.list[i].main.humidity;
     }
-
+    // UV Index AJAX Call
     var uvIndex = $.ajax({
       url: queryURL2,
       method: "GET"
@@ -67,42 +70,3 @@ $("#btn").on("click", function () {
   });
 });
 
-// Start to append the weather content to the main card
-
-// // Going to need the weather API Key
-// var APIKey = "fea808ff5dc02267acae44912e35ab54";
-// // var currentDay = moment().format("MMM Do YY");
-// var iconImg = $("#btn").on("click", function() {
-//   cityName = $("#inputField").val();
-
-//   // api.openweathermap.org/data/2.5/forecast?q={city name}&appid={your api key}
-
-//   var queryURL =
-//     "https://api.openweathermap.org/data/2.5/forecast?q=" +
-//     cityName +
-//     "&appid=" +
-//     APIKey;
-
-//   // var cityName = $("#inputField").on("click").val();
-//   var cityName = $.ajax({
-//     url: queryURL,
-//     method: "GET"
-//   }).then(function(response) {
-
-//     $(".card-body").text(response);
-//     var nameOfCity = $("<h1>").text(response.city.name);
-//     $(".col-md-8").append(nameOfCity);
-//     var currentTemp = $("<p>").text(response.list[0].main.temp);
-
-//     $("#card-w-75").append(currentTemp);
-//     var currentHumidity = $("<p>").text(response.list[0].main.humidity);
-//     $(".row4").append(currentHumidity);
-//     var windSpeed = $("<h5>").text(response.wind.speed);
-//     $("#windspeed").append(windSpeed);
-
-//    
-//   });
-// });
-
-// // UV Index query url
-// var queryURL2 = "http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}"

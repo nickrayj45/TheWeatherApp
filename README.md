@@ -1,0 +1,2 @@
+To begin the weather app, type in the name of the city and click search on the left-center of the screen. To the right of the screen, you will see the temperature (in Fahrenheit), the humidity percentage, the wind speed (in MPH) and the UV Index. The weather icon will also appear and it will represent the weather condition.
+On the bottom, you'll see the five day prediction.

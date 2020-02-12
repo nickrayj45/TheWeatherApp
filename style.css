@@ -23,10 +23,10 @@ body {
 }
 
 .col-md-4 {
-  background: yellow;
+  background: teal;
   float: left;
   width: 25%;
-  height: 400px;
+  height: 450px;
   text-align: center;
 }
 
@@ -34,7 +34,7 @@ body {
   background: white;
   float: right;
   width: 75%;
-  height: 400px;
+  height: 450px;
   text-align: center;
 }
 
